@@ -1,0 +1,18 @@
+<!-- Stylesheets Links-->
+<link rel="stylesheet" type="text/css" href="/css/assets.css">
+
+<div class="section-title">
+    <h1>Reposição da palavra-passe</h1>
+</div>
+
+<form action="/reset/{{token}}" method="post">
+    <div class="input-group">
+        <input type="password" name="newpass" placeholder="Insira um nova palavra-passe">
+    </div>
+    <div class="input-group">
+        <input type="password" name="confpass" placeholder="Confirme a sua nova palavra-passe">
+    </div>
+    <div class="input-group">
+        <input type="submit" value="Atualizar">
+    </div>
+</form>

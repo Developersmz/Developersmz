@@ -1,0 +1,499 @@
+
+<!-- Stylesheets Links -->
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/fontawesome.css">
+
+<body>
+  <!-- App loader-->
+  <div class="app-loader"></div>
+  <!-- App loader -->
+    <!-- Layout -->
+    <section class="layout">
+        <!-- Header -->
+        <header class="header">
+          <div class="container">
+            <div class="row">
+                <div class="logo">
+                    <a href="/developersmz">Developersmz</a>
+                </div>
+                <button type="button" class="menu-shower">
+                    <span></span>
+                </button>
+                <!-- Menu -->
+                <div class="nav">
+                  <ul>
+                    <li class="menu-item"><a href="#home">home</a></li>
+                    <li class="menu-item"><a href="#about">sobre</a></li>
+                    <li class="menu-item"><a href="#services">serviços</a></li>
+                    <li class="menu-item"><a href="#projects">projetos</a></li>
+                    <li class="menu-item"><a href="#testimony">testemunhos</a></li>
+                    <li class="menu-item"><a href="#contact">contato</a></li>
+                  </ul>
+                </div>
+                <!-- Menu -->
+            </div>
+          </div>
+        </header>
+        <!-- Header -->
+        <!-- Home Section -->
+        <section class="home" id="home">
+          <div class="home-bg"></div>
+          <!-- Configs -->
+          <div class="configs">
+            <span class="fas fa-palette" id="setts-btn"></span>
+          </div>
+          <div class="config-opts">
+            <div class="confs">
+              <div class="close-opts">
+                <span id="close-btn"><p><i class="fas fa-close"></i></p></span>
+              </div>
+                <div class="theme">
+                    <h4>Tema</h4>
+                    <div class="choose-bg">
+                      <div class="bg-1" id="light">
+                        <span></span>
+                        <h5 for="bg-1">Light</h5>
+                      </div>
+                      <div class="bg-2" id="dark">
+                        <span></span>
+                        <h5 for="bg-2">Dark</h5>
+                      </div>
+                    </div>
+                </div>
+             </div>
+          </div>
+          <!-- Configs -->
+          <div class="container">
+            <div class="row">
+              <div class="text">
+                <h1>DevelopersMz</h1>
+                <p>
+                    {{#db_home}}
+                      {{phrase}}
+                    {{/db_home}}
+                </p>
+                <a href="#services" class="btn btn-1">nossos serviços</a>
+              </div>
+            </div>
+        </div>
+        </section>
+        <!-- Home -->
+        <!-- About Section -->
+        <section class="about" id="about">
+          <div class="container">
+            <div class="row">
+              <div class="section-title">
+                <h2>Sobre o programa</h2>
+              </div>
+              <div class="about-text">
+                <h3>
+                  {{#db_about}}
+                    {{introduction}}
+                  {{/db_about}}
+                </h3>
+                <p>
+                    {{#db_about}}
+                    {{text}}
+                  {{/db_about}}
+                </p>
+              </div>
+              <!-- About Company -->
+              <div class="about-company">
+                <!-- Objectivo -->
+                <div class="about-item">
+                    <div class="icon"><p><i class="fas fa-bullseye"></i></p></div>
+                    <div class="title">
+                      <h4>nosso objetivo</h4>
+                    </div>
+                    <div class="intro">
+                        <p><i class="fas fa-quote-left"></i>
+                          {{#db_values}}
+                            {{objectiveIntro}}
+                          {{/db_values}}
+                        <i class="fas fa-quote-right"></i></p>
+                    </div>
+                    <div class="about-button">
+                      <a class="btn btn-2">ver mais<a>
+                    </div>
+                    <div class="text">
+                        <p>
+                            {{#db_values}}
+                              {{objectiveText}}
+                            {{/db_values}}
+                        </p>
+                    </div>
+                </div>
+                <!-- Meta -->
+                <div class="about-item">
+                    <div class="icon"><p><i class="fas fa-chart-line"></i></p></div>
+                    <div class="title">
+                      <h4>nossa meta</h4>
+                    </div>
+                    <div class="intro">
+                      <p><i class="fas fa-quote-left"></i>
+                        {{#db_values}}
+                          {{goalIntro}}
+                        {{/db_values}}
+                      <i class="fas fa-quote-right"></i></p>
+                    </div>
+                    <div class="about-button">
+                      <a class="btn btn-2">ver mais<a>
+                    </div>
+                    <div class="text">
+                        <p>
+                            {{#db_values}}
+                              {{goalText}}
+                            {{/db_values}}
+                        </p>
+                    </div>
+                </div>
+                <!-- Compromisso -->
+                <div class="about-item">
+                    <div class="icon"><p><i class="fas fa-handshake"></i></p></div>
+                    <div class="title">
+                      <h4>nosso compromisso</h4>
+                    </div>
+                    <div class="intro">
+                      <p><i class="fas fa-quote-left"></i>
+                        {{#db_values}}
+                          {{compromiseIntro}}
+                        {{/db_values}}
+                      <i class="fas fa-quote-right"></i></p>
+                    </div>
+                    <div class="about-button">
+                        <a class="btn btn-2">ver mais<a>
+                    </div>
+                    <div class="text">
+                        <p>
+                           {{#db_values}}
+                            {{compromiseText}}
+                          {{/db_values}} 
+                        </p>
+                    </div>
+                </div>
+              </div>
+              <!-- About Company -->
+              <div class="row">
+              <!-- Skills -->
+              <div class="skills">
+                <div class="section-title">
+                    <h3>Ferramentas</h3>
+                </div>
+                <div class="skill-intro">
+                  <p>algumas das nossas habilidades ou ferramentas usadas no desenvolvimento dos nossos servicos</p>
+                </div>
+                <div class="skill-container">
+                    {{#each db_skills}}
+                      <!-- Skill -->
+                      <div class="skill">
+                        <div class="title">
+                          <h4>
+                            {{title}}
+                          </h4>
+                        </div>
+                        <div class="text">
+                          <p>
+                            {{text}}
+                          </p>
+                        </div>
+                      </div>
+                      <!-- Skill -->
+                      {{/each}}
+                </div>
+              </div>
+              <!-- Skills -->
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- About -->
+        <!-- Services Section -->
+        <section class="services" id="services">
+          <div class="container">
+            <div class="row">
+              <div class="section-title">
+                <h2>Nossos serviços</h2>
+              </div>
+              <div class="services-text">
+                <p>
+                  {{#db_services}}
+                    {{introduction}}
+                  {{/db_services}}
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <!-- Service Items -->
+              <div class="service-items">
+                <!-- Service Item -->
+                {{#each db_services}}
+                  {{#if title}}
+                    {{#if text}}
+                    <div class="service-item">
+                      <div class="icon">
+                        <i class="{{icon}}"></i>
+                      </div>
+                      <div class="title">
+                        <h4>
+                          {{title}}
+                        </h4>
+                      </div>
+                      <div class="text">
+                        <p>
+                          {{text}}
+                        </p>
+                      </div>
+                    </div>
+                    {{/if}}
+                  {{/if}}
+                {{/each}}
+                <!-- Service Item -->
+              </div>
+              <!-- Service Items -->
+            </div>
+              
+              <!-- Services -->
+              <div class="go-to-next-section">
+                <p><a href="#" class="btn btn-2">Nossos trabalhos</a></p>
+              </div>
+          </div>
+        </section>
+        <!-- Services -->
+        <!-- Projects Section -->
+        <section class="projects" id="projects">
+          <div class="container">
+            <div class="row">
+                <div class="section-title">
+                  <h2>Nossos trabalhos</h2>
+                </div>
+                <div class="text">
+                    <p>
+                        {{#db_projects}}
+                          {{introduction}}
+                        {{/db_projects}}
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+              <!-- Projects -->
+              <div class="project-items">
+                  {{#each db_projects}}
+                  <!-- Project -->
+                  <div class="project">
+                    <a data-title="{{title}}">
+                      <div class="item-title">
+                        <h3>{{title}}</h3>
+                      </div>
+                      <div class="kits">
+                        <span>{{skillused}}</span>
+                      </div>
+                      <div class="type">
+                        <h4>{{type}}</h4>
+                      </div>
+                      <div class="project-link">
+                        <a href="" class="link">saber mais</a>
+                      </div>
+                    </a>
+                  </div>
+                  {{/each}}
+              </div>
+              <!-- Projects -->
+            </div>
+          </div>
+        </section>
+        <!-- Projects -->
+        <!-- Testimony Section -->
+        <section class="testimony" id="testimony">
+          <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h2>Testemunhos</h2>
+                </div>
+                <div class="text">
+                    <p>
+                      {{#db_testimony}}
+                        {{introduction}}
+                      {{/db_testimony}}
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+            <div class="testimonials">
+              <!-- Testimony item -->
+              {{#each db_testimony}}
+                {{#if name}}
+                  {{#if message}}
+                    <div class="testi-item">
+                      <div class="testi-author">
+                        <div class="author-name">
+                          <h3>
+                            {{name}}
+                          </h3>
+                        </div>
+                      </div>
+                    <p>
+                      {{message}}
+                    </p>
+                    <div class="ratings">
+                      {{#each (range 1 5)}}
+                        {{#if (isStar ../rating @index)}}
+                            <i>★</i>
+                        {{else}}
+                            <i>☆</i>
+                        {{/if}}
+                    {{/each}}
+                    </div>
+                  </div>
+                  {{/if}}
+                {{/if}}
+              <!-- Testimony item -->
+              {{/each}}
+            </div>
+            {{#if isAdmin}}
+              <div class="add-test"></div>
+            {{else}}
+              <div class="add-test">
+              <p><button type="button" class="btn btn-2" id="add-new-test">adicionar testemunho</button></p>
+            </div>
+            {{/if}}
+            <div class="new-test">
+              <div class="close-section">
+                <div id="close-sec"><i class="fas fa-close"></i></div>
+              </div>
+              <div class="contact-form">
+                <form action="/dashboard/action" method="post">
+                  <div class="input-group">
+                    <input type="hidden" name="hidden" value="newTest">
+                    <label for="name">username</label>
+                    <input type="text" id="name" name="username" value="{{username}}">
+                  </div>
+                  <div class="input-group">
+                    <label for="text">mensagem</label>
+                    <textarea name="testimony" id="text"></textarea>
+                  </div>
+                  <div class="input-group">
+                    <label for="classif">classificação [ 1 - 5 ]</label>
+                    <input type="number" name="classifNumber" min="1" max="5">
+                  </div>
+                    <button type="submit" class="btn btn-3">enviar</button>
+                  </div>
+              </form>
+              </div>
+            </div>
+            </div>
+          </div>
+        </section>
+        <!-- Testimony -->
+        <!-- Contact Section-->
+        <section class="contact" id="contact">
+          <div class="contact-bg"></div>
+          <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h2>Contato</h2>
+                </div>
+            </div>
+            <div class="row">
+              <div class="contact-form">
+                  <h2>Envie uma mensagem</h2>
+                  <form action="/developersmz/send_email" method="post">
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="name" value="{{username}}" required>
+                        <span>Nome completo</span>
+                      </div>
+                      <div class="input-group">
+                        <input type="email" class="form-control" name="email" value="{{userEmail}}" required>
+                        <span>Email</span>
+                      </div>
+                      <div class="input-group">
+                        <input type="text" class="form-control" name="phone" required>
+                        <span>Tel</span>
+                      </div>
+                      <div class="input-group">
+                        <textarea class="form-control" name="message" required></textarea>
+                        <span>Digite sua mensagem</span>
+                      </div>
+                      <div class="input-group">
+                        <input type="submit" value="enviar">
+                      </div>
+                  </form>
+              </div>
+              <div class="follow-us">
+                <div class="social-links">
+                    <a href="https://github.com/mavton23" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/developersmz/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61556706071013" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/developersmz" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="mobile-opts">
+                  <div class="mobile">
+                    <span><p>@developersmz12</p></span>
+                    <span><p>+ 258 850 151 183</p></span>
+                    <span><p>+ 258 875 338 427</p></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Contact -->
+        <!-- Footer -->
+        <footer class="footer">
+         <div class="container">
+            <div class="row">
+              <!-- Item -->
+              <div class="footer-col">
+                <h4>programa</h4>
+                <ul>
+                    <li><a href="#about">sobre o programa</a></li>
+                    <li><a href="#services">nossos serviços</a></li>
+                    <li><a href="/terms_conditions">termos & condições</a></li>
+                    <li><a href="https://www.mavtechnology.co.mz">empresa</a></li>
+                </ul>
+            </div>
+            <!-- /Item -->
+            <!-- Item -->
+            <div class="footer-col">
+                <h4>links rápidos</h4>
+                <ul>
+                    <li><a href="#home">home</a></li>
+                    <li><a href="#services">serviços</a></li>
+                    <li><a href="#projects">blog</a></li>
+                    <li><a href="#contact">nosso contato</a></li>
+                </ul>
+            </div>
+            <!-- /Item -->
+            <!-- Item -->
+            <div class="footer-col">
+                <h4>links sociais</h4>
+                <ul>
+                    <li><a href="https://github.com/mavton23" target="_blank">git hub</a></li>
+                    <li><a href="https://twitter.com/developersmz" target="_blank">twitter</a></li>
+                    <li><a href="https://www.instagram.com/developersmz/" target="_blank">instagram</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=61556706071013" target="_blank">facebook</a></li>
+                </ul>
+            </div>
+            <!-- /Item -->
+            <!-- Item -->
+            <div class="footer-col">
+                <h4>developersmz</h4>
+                <ul>
+                    <li><a href="/logout">logout</a></li>
+                    {{#if isAdmin}}
+                      <li><a href="/developersmz/dashboard">dashboard</a></li>
+                    {{/if}}
+                </ul>
+            </div>
+            <!-- /Item -->
+            <div class="copyright">
+                <p>&copy; 2024 designed by <span style="color: gold;">developersMz</span></p>
+            </div>
+            </div>
+          </div>
+        </footer>
+        <!-- Footer -->
+    </section>
+    <!-- Layout -->
+  <!-- Script Links -->
+  <script src="JS/script.js"></script>
+</body>

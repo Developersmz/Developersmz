@@ -1,0 +1,83 @@
+<!-- Link CSS -->
+<link rel="stylesheet" href="/css/dashboard.css">
+
+<body>
+    <!-- Dashboard -->
+     <section class="section">
+      <div class="bg"></div>
+      <div class="container">
+        <div class="row">
+          <div class="section-title">
+            <h2>Dashboard</h2>
+          </div>
+        </div>
+        <div class="dashboard">
+          <div class="comands">
+            <!-- Commands -->
+             <ul>
+                <li><a href="#" class="comand active" data-target="viewer-admin">admin</a></li>
+                <li><a href="#" class="comand" data-target="viewer-users">user</a></li>
+                <li><a href="/action">manager</a></li>
+                <li><a href="/developersmz">developersmz</a></li>
+             </ul>
+          </div>
+          <div class="viewer">
+            <!-- Viewer -->
+             <div class="viewer-admin active-viewer">
+              <div class="admin">
+                <div class="name">
+                  {{#if name}}
+                    <h3>{{name}}</h3>
+                  {{/if}}
+                </div>
+                <div class="mail">
+                  {{#if email}}
+                    <span>{{email}}</span>
+                  {{/if}}
+                </div>
+                <div class="password">
+                  {{#if pass}}
+                    <span>{{pass}}</span>
+                  {{/if}}
+                </div>
+                <button type="button" id="edit-button">edit</button>
+                <div class="edit-admin">
+                  <form action="/editadmin" method="post">
+                    <div class="input-group">
+                      <input type="text" placeholder="edit name" name="username">
+                    </div>
+                    <div class="input-group">
+                      <input type="email" placeholder="edit email" name="email">
+                    </div>
+                    <div class="input-group">
+                      <input type="password" placeholder="edit password" name="pass">
+                    </div>
+                    <div class="input-group">
+                      <input type="password" placeholder="confirm password" name="confpass">
+                    </div>
+                    <button type="submit">save</button>
+                    <button type="button" id="close-button">close</button>
+                  </form>
+                </div>
+              </div>
+             </div>
+             <div class="viewer-users">
+              <div class="users">
+                <select name="" id="" multiple>
+                  {{#each users}}
+                    <option value="">{{username}}</option>
+                  {{/each}}
+                </select>
+                <div class="total">
+                  <span>{{numberOfUsers}} users</span>
+                </div>
+              </div>
+             </div>
+
+          </div>
+        </div>
+      </div>
+     </section>
+     <!-- Script -->
+      <script src="/js/dashboard.js"></script>
+</body>

@@ -1,0 +1,129 @@
+    <!--<title>DevevlopersMz | User</title>-->
+
+    <!-- Stylesheets Links-->
+    <link rel="stylesheet" type="text/css" href="/css/user.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>DevelopersMz</p>
+            </div>
+            <div class="nav-button">
+                <button class="btn active-btn" id="loginBtn" onclick="login()">Entrar</button>
+                <button class="btn" id="registerBtn" onclick="register()">Criar conta</button>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="fas fa-bars" onclick="myMenuFunctions()"></i>
+            </div>
+        </nav>
+        <!-- Form box --->
+        <div class="form-box">
+
+            <!-- Login form --->
+            <div class="login-container" id="login">
+                <div class="top">
+                    <span>Não tem uma conta? <a href="#" onclick="register()">Criar conta</a></span>
+                    <header>Entrar</header>
+                </div>
+                <form action="/login" method="post">
+                    <div class="input-box">
+                        <input type="text" class="input-field" name="username" placeholder="Nome de usuário">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" name="password" placeholder="Senha">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" class="input-field" value="Login">
+                    </div>
+                </form>
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" name="" id="login-check">
+                        <label for="login-check">Mantenha-me conectado</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="/forgot">Esqueceu a senha?</a></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Registration form --->
+            <div class="register-container" id="register">
+                <div class="top">
+                    <span>Já tem uma conta? <a href="#" onclick="login()">Entrar</a></span>
+                    <header>Criar conta</header>
+                </div>
+                <form action="/register" method="post">
+                    <div class="input-box">
+                        <input type="text" class="input-field" name="username" placeholder="Nome">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" name="email" placeholder="E-mail">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" name="password" placeholder="Senha">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" class="input-field" value="Register">
+                    </div>
+                </form>
+                <div class="two-col">
+                    <div class="one">
+                        <input type="checkbox" name="" id="register-check">
+                        <label for="register-check">Mantenha-me conectado</label>
+                    </div>
+                    <div class="two">
+                        <label><a href="/developersmz/terms_conditions">Termos e Condições</a></label>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+
+<script>
+
+    function myMenuFunctions(){
+        var menuBtn = document.getElementById("navMenu")
+
+        if (menuBtn.className === "nav-menu") {
+            menuBtn.className += " responsive"
+        } else {
+            menuBtn.className = "nav-menu"
+        }
+    }
+
+</script>
+
+<script>
+    var loginBtn = document.getElementById("loginBtn")
+    var registerBtn = document.getElementById("registerBtn")
+    var loginSec = document.getElementById("login")
+    var registerSec = document.getElementById("register")
+
+    function login(){
+        loginSec.style.left = "4px"
+        registerSec.style.right = "-520px"
+        loginBtn.className += " active-btn"
+        registerBtn.classList = "btn"
+        loginSec.style.opacity = 1
+        registerSec.style.opacity = 0
+    }
+
+    function register(){
+        loginSec.style.left = "-510px"
+        registerSec.style.right = "5px"
+        loginBtn.className = "btn"
+        registerBtn.classList += " active-btn"
+        loginSec.style.opacity = 0
+        registerSec.style.opacity = 1
+    }
+
+</script>
+</body>

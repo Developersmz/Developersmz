@@ -1,0 +1,181 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  scroll-behavior: smooth;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-title {
+  padding: 15px 0;
+}
+.section-title h2 {
+  font-size: 2em;
+  font-weight: 500;
+  color: #fff000;
+}
+.section-title h3 {
+  font-size: 2rem;
+}
+
+img {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+button {
+  padding: 10px 7%;
+  background-color: transparent;
+  border: 1px solid #f0ecb2;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+button:hover {
+  border-color: #fff000;
+}
+
+body {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+  color: #000;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+body section {
+  overflow: hidden;
+}
+
+.dashboard {
+  background-color: rgba(0, 0, 0, 0.534);
+  min-height: 70vh;
+  max-height: 70vh;
+  display: grid;
+  grid-template-columns: 250px auto;
+  column-gap: 10px;
+  overflow-y: auto;
+  box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6);
+}
+.dashboard .comands {
+  background-color: rgba(0, 0, 0, 0.507);
+  padding: 50px 0;
+  display: block;
+  text-align: center;
+  align-content: center;
+}
+.dashboard .comands ul li a {
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  color: #fff000;
+  transition: all 0.5s ease;
+}
+.dashboard .comands ul li a:hover {
+  color: #ccc;
+}
+.dashboard .comands ul li a.active {
+  color: #fff;
+}
+.dashboard .viewer {
+  padding: 15px;
+}
+.dashboard .viewer-admin .edit-admin{
+  display: none;
+}
+.dashboard .viewer-admin .edit-admin.active{
+  display: block;
+}
+.viewer > div{
+  display: none;
+}
+.viewer > .active-viewer{
+  display: block;
+}
+.dashboard .viewer .name {
+  padding: 15px 0;
+}
+.dashboard .viewer .name h3 {
+  font-size: 1.7rem;
+  color: #fff;
+  text-transform: capitalize;
+}
+.dashboard .viewer .mail {
+  padding: 7px 0;
+}
+.dashboard .viewer .mail span {
+  color: #fff;
+  text-transform: lowercase;
+}
+.dashboard .viewer .password {
+  padding: 7px 0;
+}
+.dashboard .viewer .password span {
+  color: #fff;
+}
+.dashboard .input-group {
+  width: 100%;
+}
+.dashboard .input-group input {
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 1.2rem;
+  font-family: inherit;
+  margin: 10px 0;
+  border: 1px solid #f0ecb2;
+  border-radius: 10px;
+  color: #fff;
+  outline: none;
+  background-color: transparent;
+}
+.dashboard .input-group input::placeholder {
+  color: #fff;
+}
+.dashboard .viewer-users {
+  padding: 15px 0;
+  margin: 10px 0;
+  border: 1px solid #353333;
+}
+.dashboard .viewer-users .users select {
+  width: 100%;
+  padding: 5px 0;
+  font-size: 19px;
+  color: #fff000;
+  background-color: #000;
+  border: none;
+}
+.dashboard .viewer-users .users select option {
+  padding: 5px;
+}
+.dashboard .viewer-users .users .total {
+  padding: 10px;
+}
+.dashboard .viewer-users .users .total span {
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+/*# sourceMappingURL=dashboard.css.map */
