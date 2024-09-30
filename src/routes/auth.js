@@ -13,9 +13,9 @@ const { register, login, updateAction, updateAdmin, logout, checkLogin, checkAdm
 
 // Register User
 
-// router.get('/', (req, res) => {
-//     res.redirect('')
-// })
+router.get('/', (req, res) => {
+    res.redirect('/login')
+})
 
 router.get('/register', (req, res) => {
     res.render('user')
