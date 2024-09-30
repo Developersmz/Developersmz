@@ -1,6 +1,10 @@
+require('dotenv').config()
+
 const express = require('express')
+const path = require('path')
 const session = require('express-session')
 const flash = require('connect-flash')
+const MySQLStore = require('express-mysql-session')(session)
 const passport = require('passport')
 const handlebars = require('express-handlebars')
 const app = express()
@@ -23,13 +27,25 @@ const hdbs = handlebars.create({
     }
 });
 
+const sessionStore = new MySQLStore({
+    host: process.env.DB_HOST,
+    //port: 3306, 
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME
+});
+
 // Config Middleware
 app.use(express.urlencoded({extended: true}))
 app.use(session({
-    secret: 'secretsession',
+    key: 'sessiondevelopersmzkey',
+    secret: process.env.SESSION_SECRET || 'hsdhgshgdshgd1212126121yg21g21g271g72g182g18g281281g281g',
+    store: sessionStore,
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false }
+    cookie: { 
+        maxAge: 1000 * 60 * 60
+     }
 }))
 app.use(passport.initialize())
 app.use(passport.session())
@@ -41,7 +57,10 @@ app.engine('handlebars', hbs.engine)
 app.engine('handlebars', hdbs.engine)
 app.set('view engine', 'handlebars')
 
-app.use(express.static('../public'))
+// Configura o diretório onde estão as views
+app.set('views', path.join(__dirname, 'views'))
+
+app.use(express.static(path.join(__dirname, '..', 'public')))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 

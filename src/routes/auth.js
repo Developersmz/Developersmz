@@ -1,5 +1,4 @@
-const path = require('path')
-require('dotenv').config({ path: path.resolve(process.cwd(), '.env') })
+require('dotenv').config()
 
 const nodemailer = require('nodemailer')
 const express = require('express')
@@ -11,7 +10,6 @@ const { User, Home, About, Value, Skill, Service, Project, Testimony} = require(
 
 // Controllers
 const { register, login, updateAction, updateAdmin, logout, checkLogin, checkAdmin } = require('../controllers/authController')
-const { where } = require('sequelize')
 
 // Register User
 
@@ -58,8 +56,8 @@ router.post('/forgot', async (req, res) => {
             port: 587,
             secure: false,
             auth: {
-                user: 'developersmz12@gmail.com',
-                pass: 'zvygbxjdbgrexpfs'
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS
             }
         })
         
