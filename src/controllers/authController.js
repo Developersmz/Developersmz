@@ -55,7 +55,7 @@ function checkAdmin(req, res, access) {
     res.status(403).send("<h1>Acesso negado:</h1><h2> você não tem credenciais de administrador.</h2><hr><a href='/developersmz' style='line-height: 70px; padding: 15px; color: #000; margin-top: 30px; font-size: 17px; border: 1px solid #ccc; text-decoration: none;'>Voltar ao developersmz</a>")
 }
 
-const register = (req, res) => {
+const register = (req, res, next) => {
     const { username, email, password } = req.body
 
     User.create({
@@ -64,8 +64,13 @@ const register = (req, res) => {
         password: password,
         isAdmin: false,
      })
-    .then(() => {
-        res.redirect("/developersmz")
+    .then((user) => {
+        req.login(user, (e) => {
+            if (e) {
+                return next(e)
+            }
+            return res.redirect("/developersmz")
+        })
     })
     .catch((error) => {
         res.redirect('/register')
