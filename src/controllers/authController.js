@@ -78,11 +78,22 @@ const register = (req, res, next) => {
     })
 }
 
-const login = passport.authenticate("local", {
-    successRedirect: "/developersmz",
-    failureRedirect: "/login",
-    failureFlash: false
-})
+const login = async (req, res, next) => {
+    passport.authenticate('local', (err, user, info) => {
+        if (err) {
+            return next(err);
+        }
+        if (!user) {
+            return res.render('user', { errorMessage: info.message })
+        }
+        req.logIn(user, (err) => {
+            if (err) {
+                return next(err)
+            }
+            return res.redirect('/developersmz')
+        });
+    })(req, res, next)
+}
 
 const updateAction  = (req, res) => {
     if (req.body.hidden == 'home'){
