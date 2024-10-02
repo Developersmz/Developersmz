@@ -248,7 +248,7 @@ const updateAction  = (req, res) => {
             if (existingRow) {
                 return existingRow.update(data)
             } else {
-                return Value.create(data)
+                return Project.create(data)
             }
         }).then(() => res.render('output', {success: 'Tabela atualizada com sucesso!'})).catch(() => res.render('output', {error: 'Ocorreu um erro ao atualizar a tabela!'}))
     }  else if (req.body.hidden == 'project'){
