@@ -279,22 +279,26 @@
               <div class="project-items">
                   {{#each db_projects}}
                   <!-- Project -->
-                  <div class="project">
-                    <a data-title="{{title}}">
-                      <div class="item-title">
-                        <h3>{{title}}</h3>
+                  {{#if title}}
+                    {{#if skillused}}
+                      <div class="project">
+                        <a data-title="{{title}}">
+                          <div class="item-title">
+                            <h3>{{title}}</h3>
+                          </div>
+                          <div class="kits">
+                            <span>{{skillused}}</span>
+                          </div>
+                          <div class="type">
+                            <h4>{{type}}</h4>
+                          </div>
+                          <div class="project-link">
+                            <a href="" class="link">saber mais</a>
+                          </div>
+                        </a>
                       </div>
-                      <div class="kits">
-                        <span>{{skillused}}</span>
-                      </div>
-                      <div class="type">
-                        <h4>{{type}}</h4>
-                      </div>
-                      <div class="project-link">
-                        <a href="" class="link">saber mais</a>
-                      </div>
-                    </a>
-                  </div>
+                    {{/if}}
+                  {{/if}}
                   {{/each}}
               </div>
               <!-- Projects -->
