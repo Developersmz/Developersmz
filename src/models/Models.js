@@ -132,7 +132,7 @@ const Project = db.sequelize.define('Project', {
         type: DataTypes.STRING,
         allowNull: true
     },
-    screenshots: {
+    link: {
         type: DataTypes.STRING,
         allowNull: true
     }
@@ -163,12 +163,12 @@ User.beforeCreate(async (user) => {
     user.password = hash
 })
 
-// db.sequelize.sync({ force: true })
-//   .then(() => {
-//       console.log('Tabelas sincronizadas com sucesso!');
-//   })
-//   .catch((err) => {
-//       console.error('Erro ao sincronizar tabelas:', err);
-//   });
+db.sequelize.sync({ alter: true })
+  .then(() => {
+      console.log('Tabelas sincronizadas com sucesso!');
+  })
+  .catch((err) => {
+      console.error('Erro ao sincronizar tabelas:', err);
+  });
 
 module.exports = { User, Home, About, Value, Skill, Service, Project, Testimony }
