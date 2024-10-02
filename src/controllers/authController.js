@@ -6,16 +6,17 @@ const bcrypt = require('bcryptjs')
 
 // Configuração do Passport
 passport.use(new LocalStrategy(
-    async (username, password, done) => {
+    { usernameField: 'email' },
+    async (email, password, done) => {
         try {
-            const user = await User.findOne({ where: { username } })
+            const user = await User.findOne({ where: { email } })
             if (!user) {
-                return done(null, false, {message: "Usuário não encontrado."})
+                return done(null, false, { message: "Usuário não encontrado." })
             }
 
             const isMatch = await bcrypt.compare(password, user.password)
             if (!isMatch) {
-                return done(null, false, {message: "Senha incorreta."})
+                return done(null, false, { message: "Senha incorreta." })
             }
 
             return done(null, user)
@@ -29,7 +30,7 @@ passport.serializeUser((user, done) => {
     done(null, user.id)
 })
 
-passport.deserializeUser(async (id, done) => {``
+passport.deserializeUser(async (id, done) => {
     try {
         const user = await User.findByPk(id)
         done(null, user)
