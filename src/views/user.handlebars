@@ -1,6 +1,7 @@
 <!-- Stylesheets Links-->
 <link rel="stylesheet" type="text/css" href="/css/user.css">
 <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+<link rel="stylesheet" type="text/css" href="/css/output.css">
 
 <body>
     <div class="wrapper">
@@ -25,6 +26,9 @@
                     <span>Não tem uma conta? <a href="#" onclick="register()">Criar conta</a></span>
                     <header>Entrar</header>
                 </div>
+                {{#if errorMessage}}
+                    <div class="alert alert-danger">{{errorMessage}}</div>
+                {{/if}}
                 <form action="/login" method="post">
                     <div class="input-box">
                         <input type="email" class="input-field" name="email" placeholder="Email do usuário" required>
