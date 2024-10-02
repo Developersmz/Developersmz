@@ -73,61 +73,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const bg2 = document.querySelector(".bg-2")
     const bg3 = document.querySelector(".bg-3")
     const root = document.querySelector(":root")
-
-
-    // const changeTheme = (theme) => {
-    //     if (theme == 'light'){
-    //         document.body.classList.remove('dark-theme')
-    //     } else if (theme == 'dark') {
-    //         document.body.classList.add('dark-theme')
-    //     }
-    // }
-
-    // Load saved theme
-    // const savedTheme = localStorage.getItem('theme') || 'light'
-    // changeTheme(savedTheme)
-
-    // Save selected theme
-    // bg1.addEventListener("click", () => {
-    //     let selectedTheme
-    //     changeTheme(bg1.id)
-    //     selectedTheme = bg1.id
-
-    //     bg1.classList.add('active')
-        // remove active class from the others
-	    //bg2.classList.remove('active')
-        // remove customized changes from local storage
-	//     if (selectedTheme){
-    //         changeTheme(selectedTheme)
-    //         localStorage.setItem('theme', selectedTheme)
-    //     }
-    //     if (bg1.classList.contains('active')){
-    //         window.location.reload()
-    //     }
-    // })
-    // bg2.addEventListener("click", () => {
-    //     let selectedTheme
-    //     changeTheme(bg2.id)
-    //     selectedTheme = bg2.id
-
-    //     bg2.classList.add('active')
-        // remove active class from the others
-	//     bg1.classList.remove('active')
-    //     if (selectedTheme){
-    //         changeTheme(selectedTheme)
-    //         localStorage.setItem('theme', selectedTheme)
-    //     }
-    // })
     
     // Show more about content
-    // const moreAboutBtn = document.querySelectorAll(".about-button")
-    // moreAboutBtn.forEach((button) => {
-    //     button.addEventListener("click", (event) => {
-    //         const parentDiv = event.target.closest(".about-item")
-    //         console.log(parentDiv)
-    //         parentDiv.classList.toggle('showed')
-    //     })
-    // })
+    const moreAboutBtn = document.querySelectorAll(".about-button")
+    moreAboutBtn.forEach((button) => {
+        button.addEventListener("click", (event) => {
+            const parentDiv = event.target.closest(".about-item")
+            console.log(parentDiv)
+            parentDiv.classList.toggle('showed')
+        })
+    })
 
     // add new testimony
     const addTest = document.querySelector("#add-new-test")
