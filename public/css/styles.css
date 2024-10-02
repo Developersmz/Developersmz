@@ -769,6 +769,9 @@ p {
   border-radius: 8px;
   display: inline-block;
 }
+.services .service-items .service-item .icon i {
+  line-height: 60px;
+}
 .services .service-items .service-item .title h4 {
   font-size: 19px;
   text-transform: capitalize;
