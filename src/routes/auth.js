@@ -13,6 +13,10 @@ const { register, login, logout } = require('../controllers/authController')
 
 // Register User
 
+router.get('/', (req, res) => {
+    res.redirect('/login')
+})
+
 router.get('/register', (req, res) => {
     res.render('user')
 })

@@ -279,22 +279,26 @@
               <div class="project-items">
                   {{#each db_projects}}
                   <!-- Project -->
-                  <div class="project">
-                    <a data-title="{{title}}">
-                      <div class="item-title">
-                        <h3>{{title}}</h3>
+                  {{#if title}}
+                    {{#if skillused}}
+                      <div class="project">
+                        <a data-title="{{title}}">
+                          <div class="item-title">
+                            <h3>{{title}}</h3>
+                          </div>
+                          <div class="kits">
+                            <span>{{skillused}}</span>
+                          </div>
+                          <div class="type">
+                            <h4>{{type}}</h4>
+                          </div>
+                          <div class="project-link">
+                            <a href="{{link}}" target="_blank" class="link">visitar projecto</a>
+                          </div>
+                        </a>
                       </div>
-                      <div class="kits">
-                        <span>{{skillused}}</span>
-                      </div>
-                      <div class="type">
-                        <h4>{{type}}</h4>
-                      </div>
-                      <div class="project-link">
-                        <a href="" class="link">saber mais</a>
-                      </div>
-                    </a>
-                  </div>
+                    {{/if}}
+                  {{/if}}
                   {{/each}}
               </div>
               <!-- Projects -->
@@ -365,15 +369,15 @@
                   <div class="input-group">
                     <input type="hidden" name="hidden" value="newTest">
                     <label for="name">username</label>
-                    <input type="text" id="name" name="username" value="{{username}}">
+                    <input type="text" id="name" name="username" value="{{username}} required">
                   </div>
                   <div class="input-group">
                     <label for="text">mensagem</label>
-                    <textarea name="testimony" id="text"></textarea>
+                    <textarea name="testimony" id="text" required></textarea>
                   </div>
                   <div class="input-group">
                     <label for="classif">classificação [ 1 - 5 ]</label>
-                    <input type="number" name="classifNumber" min="1" max="5">
+                    <input type="number" name="classifNumber" min="1" max="5" required>
                   </div>
                     <button type="submit" class="btn btn-3">enviar</button>
                   </div>
@@ -507,5 +511,5 @@
     </section>
     <!-- Layout -->
   <!-- Script Links -->
-  <script src="JS/script.js"></script>
+  <script src="/js/script.js"></script>
 </body>
