@@ -6,10 +6,10 @@ const crypto = require('crypto')
 const bcrypt = require('bcryptjs')
 const { Op } = require('sequelize')
 const router = express.Router()
-const { User, Home, About, Value, Skill, Service, Project, Testimony} = require('../models/Models')
+const { User } = require('../models/Models')
 
 // Controllers
-const { register, login, updateAction, updateAdmin, logout, checkLogin, checkAdmin } = require('../controllers/authController')
+const { register, login, logout } = require('../controllers/authController')
 
 // Register User
 
@@ -18,8 +18,6 @@ router.get('/register', (req, res) => {
 })
 
 router.post('/register', register)
-
-// Login User
 
 router.get('/login', (req, res) => {
     res.render('user')
@@ -135,105 +133,6 @@ router.post('/reset/:token', async (req, res) => {
 
 router.get('/logout', logout)
 
-router.get('/developersmz', checkLogin, async (req, res) => {
-    let db_home = await Home.findAll()
-    let db_about = await About.findAll()
-    let db_values = await Value.findAll()
-    let db_skills = await Skill.findAll()
-    let db_services = await Service.findAll()
-    let db_projects = await Project.findAll()
-    let db_testimony = await Testimony.findAll()
-
-    let home = db_home.map(items => items.toJSON())
-    let about = db_about.map(items => items.toJSON())
-    let values = db_values.map(items => items.toJSON())
-    let skills = db_skills.map(items => items.toJSON())
-    let services = db_services.map(items => items.toJSON())
-    let projects = db_projects.map(items => items.toJSON())
-    let testimony = db_testimony.map(items => items.toJSON())
-
-    const isAdmin = req.user.isAdmin
-    const username = req.user.username
-    const userEmail = req.user.email
-    
-    res.render('index', {
-        db_home: home,
-        db_about: about,
-        db_values: values,
-        db_skills: skills,
-        db_services: services,
-        db_projects: projects,
-        db_testimony: testimony,
-        isAdmin,
-        username,
-        userEmail,
-    })
-})
-
-router.post('/developersmz/send_email', (req, res) => {
-    const { name, email, phone, message } = req.body
-
-    // Configurando o Nodemailer para enviar o email
-    const transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 587,
-        secure: false,
-        auth: {
-            user: 'developersmz12@gmail.com',
-            pass: 'zvygbxjdbgrexpfs'
-        }
-    })
-    const mailOptions = {
-        from: email,
-        to: 'developersmz12@gmail.com',
-        subject: `Novo Contato: ${name}`,
-        text: `Você recebeu uma nova mensagem de:
-        
-        Nome: ${name}
-        Email: ${email}
-        Telefone: ${phone}
-        Mensagem: ${message}`
-    }
-    // Enviando o email
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.log(error);
-            return res.status(500).send('<h1>Ocorreu um erro ao enviar o e-mail.</h1>');
-        } else {
-            console.log('Email enviado: ' + info.response);
-            res.send('<h1>E-mail enviado com sucesso!</h1>');
-        }
-    })
-})
-
-router.get('/developersmz/terms_conditions', (req, res) => {
-    res.render('conditions')
-})
-
-router.get('/developersmz/dashboard/action', checkLogin, checkAdmin, (req, res) => {
-    res.render('actions')
-})
-
-router.post('/dashboard/action', updateAction)
-
-router.get('/action/output', checkLogin, checkAdmin, (req, res) => {
-    res.render('output')
-})
-
-router.get('/developersmz/dashboard', checkLogin, checkAdmin, async (req, res) => {
-    let db_users = await User.findAll()
-    let users = db_users.map(items => items.toJSON())
-    let numberOfUsers = users.length
-    let pickadmin = await User.findOne({ where: { isAdmin: true } })
-
-    const name = pickadmin.username
-    const email = pickadmin.email
-    const pass = pickadmin.password
-
-    res.render('dashboard', {users, numberOfUsers, name, email, pass})
-})
-
-router.post('/editadmin', updateAdmin)
 
 module.exports = router
 

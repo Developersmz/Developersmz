@@ -1,8 +1,7 @@
-    <!--<title>DevevlopersMz | User</title>-->
-
-    <!-- Stylesheets Links-->
-    <link rel="stylesheet" type="text/css" href="/css/user.css">
-    <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+<!-- Stylesheets Links-->
+<link rel="stylesheet" type="text/css" href="/css/user.css">
+<link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+<link rel="stylesheet" type="text/css" href="/css/output.css">
 
 <body>
     <div class="wrapper">
@@ -20,20 +19,22 @@
         </nav>
         <!-- Form box --->
         <div class="form-box">
-
             <!-- Login form --->
             <div class="login-container" id="login">
                 <div class="top">
                     <span>Não tem uma conta? <a href="#" onclick="register()">Criar conta</a></span>
                     <header>Entrar</header>
                 </div>
-                <form action="/login" method="post">
+                {{#if errorMessage}}
+                    <div class="alert alert-danger">{{errorMessage}}</div>
+                {{/if}}
+                <form action="/auth/login" method="post">
                     <div class="input-box">
-                        <input type="text" class="input-field" name="username" placeholder="Nome de usuário">
+                        <input type="email" class="input-field" name="email" placeholder="Email de usuário" required>
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" class="input-field" name="password" placeholder="Senha">
+                        <input type="password" class="input-field" name="password" placeholder="Senha" required>
                         <i class="fas fa-lock"></i>
                     </div>
                     <div class="input-box">
@@ -57,17 +58,17 @@
                     <span>Já tem uma conta? <a href="#" onclick="login()">Entrar</a></span>
                     <header>Criar conta</header>
                 </div>
-                <form action="/register" method="post">
+                <form action="/auth/register" method="post">
                     <div class="input-box">
-                        <input type="text" class="input-field" name="username" placeholder="Nome">
+                        <input type="text" class="input-field" name="username" placeholder="Nome" required>
                         <i class="fas fa-user"></i>
                     </div>
                     <div class="input-box">
-                        <input type="text" class="input-field" name="email" placeholder="E-mail">
+                        <input type="text" class="input-field" name="email" placeholder="E-mail" required>
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div class="input-box">
-                        <input type="password" class="input-field" name="password" placeholder="Senha">
+                        <input type="password" class="input-field" name="password" placeholder="Senha" required>
                         <i class="fas fa-lock"></i>
                     </div>
                     <div class="input-box">

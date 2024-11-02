@@ -1,16 +1,18 @@
 <!-- Stylesheets Links-->
 <link rel="stylesheet" type="text/css" href="/css/assets.css">
 
-<div class="section-title">
-    <h2>Reposição da palavra-passe</h2>
-    <p>Digite o email para repor a senha</p>
-</div>
+<div class="form">
+    <div class="section-title">
+        <h2>Reposição da palavra-passe</h2>
+        <p>Digite o seu email para repor a senha</p>
+    </div>
 
-<form action="/forgot" method="post">
-    <div class="input-group">
-        <input type="email" name="email" placeholder="Digite um email">
-    </div>
-    <div class="input-group">
-        <input type="submit" value="Solicitar">
-    </div>
-</form>
+    <form action="/auth/forgot" method="post">
+        <div class="input-group">
+            <input type="email" name="email" placeholder="Digite seu email" required>
+        </div>
+        <div class="input-group">
+            <input type="submit" value="Solicitar">
+        </div>
+    </form>
+</div>

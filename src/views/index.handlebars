@@ -349,7 +349,7 @@
               <!-- Testimony item -->
               {{/each}}
             </div>
-            {{#if isAdmin}}
+            {{#if user.isAdmin}}
               <div class="add-test"></div>
             {{else}}
               <div class="add-test">
@@ -361,7 +361,7 @@
                 <div id="close-sec"><i class="fas fa-close"></i></div>
               </div>
               <div class="contact-form">
-                <form action="/dashboard/action" method="post">
+                <form action="/admin/dashboard/action" method="post">
                   <div class="input-group">
                     <input type="hidden" name="hidden" value="newTest">
                     <label for="name">username</label>
@@ -413,9 +413,15 @@
                         <textarea class="form-control" name="message" required></textarea>
                         <span>Digite sua mensagem</span>
                       </div>
-                      <div class="input-group">
-                        <input type="submit" value="enviar">
-                      </div>
+                      {{#if user}}
+                        <div class="input-group">
+                          <input type="submit" value="enviar">
+                        </div>
+                        {{else}}
+                          <div class="input-group">
+                            <a href="/login" class="btn btn-2">Login</a>
+                          </div>
+                      {{/if}}
                   </form>
               </div>
               <div class="follow-us">
@@ -447,7 +453,7 @@
                 <ul>
                     <li><a href="#about">sobre o programa</a></li>
                     <li><a href="#services">nossos serviços</a></li>
-                    <li><a href="/terms_conditions">termos & condições</a></li>
+                    <li><a href="/developersmz/terms_conditions">termos & condições</a></li>
                     <li><a href="https://www.mavtechnology.co.mz">empresa</a></li>
                 </ul>
             </div>
@@ -478,11 +484,16 @@
             <div class="footer-col">
                 <h4>developersmz</h4>
                 <ul>
-                    <li><a href="/logout">logout</a></li>
-                    {{#if isAdmin}}
-                      <li><a href="/developersmz/dashboard">dashboard</a></li>
-                      <li><a href="/developersmz/dashboard/action">action</a></li>
+                  {{#if user}}
+                    <li><a href="/auth/logout">logout</a></li>
+                    {{#if user.isAdmin}}
+                      <li><a href="/admin/developersmz/dashboard">dashboard</a></li>
+                      <li><a href="/admin/developersmz/dashboard/action">action</a></li>
                     {{/if}}
+                    {{else}}
+                      <li><a href="/auth/register">Inscreva-se</a></li>
+                      <li><a href="/auth/login">Entrar</a></li>
+                  {{/if}}
                 </ul>
             </div>
             <!-- /Item -->

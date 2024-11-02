@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h2>Add home phrase</h2>
                     </div>
                     <div class="form">
-                        <form method="post" action="/action">
+                        <form method="post" action="/admin/dashboard/action">
                             <div class="input-group">
                                 <input type="hidden" name="hidden" value="home"></input>
                                 <label for="home-tx">digite a frase do home</label>
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h2>Add about introduction</h2>
                     </div>
                     <div class="form">
-                        <form method="post" action="/action">
+                        <form method="post" action="/admin/dashboard/action">
                             <div class="input-group">
                                 <input type="hidden" name="hidden" value="aboutInt"></input>
                                 <label for="about-int">digite a introdução do about</label>
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h2>Add about text</h2>
                     </div>
                     <div class="form">
-                        <form method="post" action="/action">
+                        <form method="post" action="/admin/dashboard/action">
                             <div class="input-group">
                                 <input type="hidden" name="hidden" value="aboutText"></input>
                                 <label for="about-tx">digite o texto do about</label>
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h2>Add Objective introduction</h2>
                     </div>
                     <div class="form">
-                        <form method="post" action="/action">
+                        <form method="post" action="/admin/dashboard/action">
                             <div class="input-group">
                                 <input type="hidden" name="hidden" value="objInt"></input>
                                 <label for="obj-int">digite a introdução do object</label>
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h2>Add Objective text</h2>
                     </div>
                     <div class="form">
-                        <form method="post" action="/action">
+                        <form method="post" action="/admin/dashboard/action">
                             <div class="input-group">
                                 <input type="hidden" name="hidden" value="objText"></input>
                                 <label for="obj-ph">digite o texto</label>
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h2>Add goal introduction</h2>
                     </div>
                     <div class="form">
-                        <form method="post" action="/action">
+                        <form method="post" action="/admin/dashboard/action">
                             <div class="input-group">
                                 <input type="hidden" name="hidden" value="goalInt"></input>
                                 <label for="goal-int">digite a introdução do goal</label>
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h2>Add goal text</h2>
                     </div>
                     <div class="form">
-                        <form method="post" action="/action">
+                        <form method="post" action="/admin/dashboard/action">
                             <div class="input-group">
                                 <input type="hidden" name="hidden" value="goalText"></input>
                                 <label for="goal-ph">digite o texto do goal</label>
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h2>Add compromisse introduction</h2>
                     </div>
                     <div class="form">
-                        <form method="post" action="/action">
+                        <form method="post" action="/admin/dashboard/action">
                             <div class="input-group">
                                 <input type="hidden" name="hidden" value="compInt"></input>
                                 <label for="comp-ph">digite a introdução do compromisse</label>
@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h2>Add compromisse text</h2>
                     </div>
                     <div class="form">
-                        <form method="post" action="/action">
+                        <form method="post" action="/admin/dashboard/action">
                             <div class="input-group">
                                 <input type="hidden" name="hidden" value="compText"></input>
                                 <label for="comp-tx">digite o texto do compromisse</label>
@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h2>Add skill</h2>
                     </div>
                     <div class="form">
-                        <form method="post" action="/action">
+                        <form method="post" action="/admin/dashboard/action">
                             <div class="input-group">
                                 <input type="hidden" name="hidden" value="addSkill"></input>
                                 <label for="skill-tl">digite o título da skill ou kit</label>
@@ -265,7 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h2>Add services text</h2>
                     </div>
                     <div class="form">
-                        <form method="post" action="/action">
+                        <form method="post" action="/admin/dashboard/action">
                             <div class="input-group">
                                 <input type="hidden" name="hidden" value="service"></input>
                                 <label for="service-tx">digite a frase do services</label>
@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h2>Add service</h2>
                     </div>
                     <div class="form">
-                        <form method="post" action="/action">
+                        <form method="post" action="/admin/dashboard/action">
                             <div class="input-group">
                                 <input type="hidden" name="hidden" value="addService"></input>
                                 <label for="serv-ic">icone do serviço</label>
@@ -321,7 +321,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h2>Add projects phrase</h2>
                     </div>
                     <div class="form">
-                        <form method="post" action="/action">
+                        <form method="post" action="/admin/dashboard/action">
                             <div class="input-group">
                                 <input type="hidden" name="hidden" value="projText"></input>
                                 <label for="proj-tx">digite a frase do projects</label>
@@ -345,7 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h2>Add project</h2>
                     </div>
                     <div class="form">
-                        <form method="post" action="/action">
+                        <form method="post" action="/admin/dashboard/action">
                             <div class="input-group">
                                 <input type="hidden" name="hidden" value="project"></input>
                                 <label for="proj-tl">título do projeto</label>
@@ -381,7 +381,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <h2>Add testimonials phrase</h2>
                     </div>
                     <div class="form">
-                        <form method="post" action="/action">
+                        <form method="post" action="/admin/dashboard/action">
                             <div class="input-group">
                                 <input type="hidden" name="hidden" value="testText"></input>
                                 <label for="test-tx">digite a frase do testimonial</label>

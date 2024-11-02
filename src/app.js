@@ -9,7 +9,10 @@ const passport = require('passport')
 const handlebars = require('express-handlebars')
 const app = express()
 const bodyParser = require('body-parser')
+
 const authRoutes = require('./routes/auth')
+const indexRoutes = require('./routes/index')
+const adminRoutes = require('./routes/admin')
 
 // Definir os helpers
 const hdbs = handlebars.create({
@@ -65,7 +68,9 @@ app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
 // Importar as rotas
-app.use('/', authRoutes)
+app.use('/auth', authRoutes)
+app.use('/', indexRoutes)
+app.use('/admin', adminRoutes)
 
 const PORT = 3000
 app.listen(PORT, () => console.log(`SERVER ARE RUNNING ON ${PORT} PORT`))
