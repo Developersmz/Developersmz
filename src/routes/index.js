@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer')
 const router = express.Router()
 const { User, Home, About, Value, Skill, Service, Project, Testimony} = require('../models/Models')
 
-router.get('/developersmz', async (req, res) => {
+router.get('/', async (req, res) => {
     let db_home = await Home.findAll()
     let db_about = await About.findAll()
     let db_values = await Value.findAll()
