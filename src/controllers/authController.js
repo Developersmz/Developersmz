@@ -15,7 +15,7 @@ const register = (req, res, next) => {
             if (e) {
                 return next(e)
             }
-            return res.redirect("/developersmz")
+            return res.redirect("/")
         })
     })
     .catch((error) => {
@@ -35,7 +35,7 @@ const login = async (req, res, next) => {
             if (err) {
                 return next(err)
             }
-            return res.redirect('/developersmz')
+            return res.redirect('/')
         });
     })(req, res, next)
 }
