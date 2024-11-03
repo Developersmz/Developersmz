@@ -43,6 +43,9 @@
 	background: #ccc;
 	border-radius: 3rem;
 }
+a {
+  text-decoration: none;
+}
 body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/bg-3.jpg");
   background-size: cover;
@@ -68,10 +71,11 @@ body .wrapper .nav {
   padding: 15px 7%;
   z-index: 100;
 }
-body .wrapper .nav p {
+body .wrapper .nav a {
   color: #fff;
   font-size: 25px;
   font-weight: 600;
+  text-decoration: none;
 }
 body .wrapper .nav ul {
   display: flex;
@@ -208,7 +212,7 @@ body .wrapper .form-box .two-col {
   justify-content: space-between;
   color: #fff;
   font-size: small;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 body .wrapper .form-box .two-col .one {
   display: flex;
@@ -273,7 +277,10 @@ body .wrapper .form-box .two-col .two a:hover {
     display: none;
   }
   body .wrapper .form-box .two-col {
-    margin: 0 20px;
+    margin-top: 7px;
+    width: 90%;
+    margin: auto;
+
   }
 }
 @media (max-width: 768px) {

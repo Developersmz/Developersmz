@@ -14,7 +14,7 @@
           <div class="container">
             <div class="row">
                 <div class="logo">
-                    <a href="/developersmz">Developersmz</a>
+                    <a href="/">Developersmz</a>
                 </div>
                 <button type="button" class="menu-shower">
                     <span></span>
@@ -279,26 +279,22 @@
               <div class="project-items">
                   {{#each db_projects}}
                   <!-- Project -->
-                  {{#if title}}
-                    {{#if skillused}}
-                      <div class="project">
-                        <a data-title="{{title}}">
-                          <div class="item-title">
-                            <h3>{{title}}</h3>
-                          </div>
-                          <div class="kits">
-                            <span>{{skillused}}</span>
-                          </div>
-                          <div class="type">
-                            <h4>{{type}}</h4>
-                          </div>
-                          <div class="project-link">
-                            <a href="{{link}}" target="_blank" class="link">visitar projecto</a>
-                          </div>
-                        </a>
+                  <div class="project">
+                    <a data-title="{{title}}">
+                      <div class="item-title">
+                        <h3>{{title}}</h3>
                       </div>
-                    {{/if}}
-                  {{/if}}
+                      <div class="kits">
+                        <span>{{skillused}}</span>
+                      </div>
+                      <div class="type">
+                        <h4>{{type}}</h4>
+                      </div>
+                      <div class="project-link">
+                        <a href="" class="link">saber mais</a>
+                      </div>
+                    </a>
+                  </div>
                   {{/each}}
               </div>
               <!-- Projects -->
@@ -341,9 +337,9 @@
                     <div class="ratings">
                       {{#each (range 1 5)}}
                         {{#if (isStar ../rating @index)}}
-                            <i>★</i>
+                            <i class="fas fa-star"></i>
                         {{else}}
-                            <i>☆</i>
+                            <i class="fas fa-star" style="color: rgba(255, 217, 0, 0.247);"></i>
                         {{/if}}
                     {{/each}}
                     </div>
@@ -353,13 +349,14 @@
               <!-- Testimony item -->
               {{/each}}
             </div>
-            {{#if user.isAdmin}}
-              <div class="add-test"></div>
-            {{else}}
-              <div class="add-test">
-              <p><button type="button" class="btn btn-2" id="add-new-test">adicionar testemunho</button></p>
-            </div>
+            {{#if user.username}}
+              {{#unless user.isAdmin}}
+                <div class="add-test">
+                  <p><button type="button" class="btn btn-2" id="add-new-test">adicionar testemunho</button></p>
+                </div>
+              {{/unless}}
             {{/if}}
+
             <div class="new-test">
               <div class="close-section">
                 <div id="close-sec"><i class="fas fa-close"></i></div>
@@ -369,15 +366,15 @@
                   <div class="input-group">
                     <input type="hidden" name="hidden" value="newTest">
                     <label for="name">username</label>
-                    <input type="text" id="name" name="username" value="{{username}} required">
+                    <input type="text" id="name" name="username" value="{{username}}">
                   </div>
                   <div class="input-group">
                     <label for="text">mensagem</label>
-                    <textarea name="testimony" id="text" required></textarea>
+                    <textarea name="testimony" id="text"></textarea>
                   </div>
                   <div class="input-group">
                     <label for="classif">classificação [ 1 - 5 ]</label>
-                    <input type="number" name="classifNumber" min="1" max="5" required>
+                    <input type="number" name="classifNumber" min="1" max="5">
                   </div>
                     <button type="submit" class="btn btn-3">enviar</button>
                   </div>
@@ -511,5 +508,5 @@
     </section>
     <!-- Layout -->
   <!-- Script Links -->
-  <script src="/js/script.js"></script>
+  <script src="JS/script.js"></script>
 </body>

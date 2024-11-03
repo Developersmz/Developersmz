@@ -360,8 +360,8 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <input type="text" id="proj-ct" name="projectType"></input>
                             </div>
                             <div class="input-group">
-                                <label for="proj-scr">link do projeto</label>
-                                <input type="text" id="proj-scr" name="projectLink"></input>
+                                <label for="proj-scr">screenshots do projeto</label>
+                                <input type="file" id="proj-scr" name="projectImgs"></input>
                             </div>
                             <div class="input-group">
                                 <button type="submit" class="button">salvar frase</button>

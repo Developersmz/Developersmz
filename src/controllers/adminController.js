@@ -200,7 +200,7 @@ const updateAction  = (req, res) => {
             message: testimony,
             rating: classifNumber,
         }
-        Testimony.create(data).then(() => res.redirect('/developersmz')).catch(() => res.redirect('/developersmz'))
+        Testimony.create(data).then(() => res.redirect('/')).catch(() => res.redirect('/'))
     }
 }
 

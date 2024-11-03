@@ -34,6 +34,14 @@ const User = db.sequelize.define('User', {
     }
 })
 
+// User.sync({ alter: true })
+//     .then(() => {
+//         console.log('Banco de dados sincronizado e modelo atualizado.');
+//     })
+//     .catch((err) => {
+//         console.log('Erro ao sincronizar o banco de dados:', err);
+//     });
+
 const Home = db.sequelize.define('Home', {
     phrase: {
         type: DataTypes.STRING,
@@ -132,7 +140,7 @@ const Project = db.sequelize.define('Project', {
         type: DataTypes.STRING,
         allowNull: true
     },
-    link: {
+    screenshots: {
         type: DataTypes.STRING,
         allowNull: true
     }
@@ -162,13 +170,5 @@ User.beforeCreate(async (user) => {
     const hash = await bcrypt.hash(user.password, 10)
     user.password = hash
 })
-
-// db.sequelize.sync({ alter: true })
-//   .then(() => {
-//       console.log('Tabelas sincronizadas com sucesso!');
-//   })
-//   .catch((err) => {
-//       console.error('Erro ao sincronizar tabelas:', err);
-//   });
 
 module.exports = { User, Home, About, Value, Skill, Service, Project, Testimony }
