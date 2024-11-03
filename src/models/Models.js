@@ -34,13 +34,13 @@ const User = db.sequelize.define('User', {
     }
 })
 
-User.sync({ alter: true })
-    .then(() => {
-        console.log('Banco de dados sincronizado e modelo atualizado.');
-    })
-    .catch((err) => {
-        console.log('Erro ao sincronizar o banco de dados:', err);
-    });
+// User.sync({ alter: true })
+//     .then(() => {
+//         console.log('Banco de dados sincronizado e modelo atualizado.');
+//     })
+//     .catch((err) => {
+//         console.log('Erro ao sincronizar o banco de dados:', err);
+//     });
 
 const Home = db.sequelize.define('Home', {
     phrase: {

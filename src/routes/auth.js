@@ -117,7 +117,7 @@ router.post('/reset/:token', async (req, res) => {
           return res.status(400).send('<h1>Token de redefinição inválido ou expirado.</h1>');
         }
         if (newpass != confpass) {
-            return res.status(400).send('As senhas nao coencidem.');
+            return res.status(400).send('As senhas não coencidem.');
         }
         // Atualiza a senha e limpa o token
         user.password = await bcrypt.hash(newpass, 10);
