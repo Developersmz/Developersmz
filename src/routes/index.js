@@ -40,8 +40,15 @@ router.get('/', async (req, res) => {
     })
 })
 
-router.post('/developersmz/send_email', (req, res) => {
+router.post('/developersmz/send_email', async (req, res) => {
+   try {
     const { name, email, phone, message } = req.body
+
+    const user = await User.findOne({ where: { email } })
+
+    if (!user) {
+        res.render('index', { error: "Use o mesmo email da sua conta!" })
+    }
 
     // Configurando o Nodemailer para enviar o email
     const transporter = nodemailer.createTransport({
@@ -49,31 +56,32 @@ router.post('/developersmz/send_email', (req, res) => {
         port: 587,
         secure: false,
         auth: {
-            user: 'developersmz12@gmail.com',
-            pass: 'zvygbxjdbgrexpfs'
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
         }
     })
     const mailOptions = {
         from: email,
-        to: 'developersmz12@gmail.com',
+        to: process.env.EMAIL_USER,
         subject: `Novo Contato: ${name}`,
         text: `Você recebeu uma nova mensagem de:
         
-        Nome: ${name}
-        Email: ${email}
-        Telefone: ${phone}
-        Mensagem: ${message}`
+        Nome: ${name} \n
+        Email: ${email} \n
+        Telefone: ${phone} \n
+        Mensagem: ${message} \n`
     }
     // Enviando o email
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            console.log(error);
-            return res.status(500).send('<h1>Ocorreu um erro ao enviar o e-mail.</h1>');
+            return res.render('index', { error: "Ocorreu um erro durante o envio!" })
         } else {
-            console.log('Email enviado: ' + info.response);
-            res.send('<h1>E-mail enviado com sucesso!</h1>');
+            return res.render('index', { success: "E-mail enviado com sucesso!" })
         }
     })
+   } catch (error) {
+    console.log("Erro no envio: " + error)
+   }
 })
 
 router.get('/developersmz/terms_conditions', (req, res) => {

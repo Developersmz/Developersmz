@@ -416,13 +416,23 @@
                         <textarea class="form-control" name="message" required></textarea>
                         <span>Digite sua mensagem</span>
                       </div>
+                      {{#if error}}
+                        <div class="alert alert-danger">
+                          <p>{{error}}</p>
+                        </div>
+                      {{/if}}
+                      {{#if success}}
+                        <div class="success alert-success">
+                          <p>{{success}}</p>
+                        </div>
+                      {{/if}}
                       {{#if user}}
                         <div class="input-group">
                           <input type="submit" value="enviar">
                         </div>
                         {{else}}
                           <div class="input-group">
-                            <a href="/login" class="btn btn-2">Login</a>
+                            <a href="/auth/login" class="btn btn-2">Login</a>
                           </div>
                       {{/if}}
                   </form>
@@ -510,5 +520,5 @@
     </section>
     <!-- Layout -->
   <!-- Script Links -->
-  <script src="js/script.js"></script>
+  <script src="JS/script.js"></script>
 </body>

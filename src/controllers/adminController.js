@@ -1,3 +1,4 @@
+const bcrypt = require('bcryptjs')
 const { User, Home, About, Value, Skill, Service, Project, Testimony } = require('../models/Models')
 
 const updateAction  = (req, res) => {
@@ -221,12 +222,12 @@ const updateAdmin = async (req, res) => {
                     { username, email, password: hashedpass }, 
                     { where: { id: admin.id } } 
                 )
-                console.log("Admin atualizado com sucesso")
+                res.render('output', { success: "Admin atualizado com sucesso!" })
             } else {
-                console.log("As palavras-passe não coincidem")
+                res.render('output', { error: "As palavras-passe não coincidem!" })
             }
         } else {
-            console.log("Admin inexistente!")
+            res.render('output', { error: "Admin inexistente!" })
         }
     } catch (e) {
         console.log("Ocorreu um erro: ", e)
