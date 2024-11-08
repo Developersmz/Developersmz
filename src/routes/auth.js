@@ -60,7 +60,7 @@ router.post('/forgot', async (req, res) => {
         })
         
         // Envia o e-mail com o link de redefinição de senha
-        const resetUrl = `http://localhost:3000/reset/${resetToken}`
+        const resetUrl = `https://developersmz.onrender.com/reset/${resetToken}`
         const mailOptions = {
         to: user.email,
         from: process.env.EMAIL_USER,
