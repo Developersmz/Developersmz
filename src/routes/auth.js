@@ -125,7 +125,7 @@ router.post('/reset/:token', async (req, res) => {
         user.resetPasswordExpires = null;
         await user.save();
     
-        res.send('<h1>Senha alterada com sucesso!</h1><br><hr><br><a style={text-decoration: none; padding: 15px; border: 1px solid #000} href="/login">Voltar ao login</a>');
+        res.send('<h1>Senha alterada com sucesso!</h1><br><hr><br><a style={text-decoration: none; padding: 15px; border: 1px solid #000} href="/auth/login">Voltar ao login</a>');
       } catch (error) {
         res.status(500).send('<h1>Erro ao redefinir a senha.</h1><br><hr><br><a style={text-decoration: none; padding: 15px; border: 1px solid #000} href="/login">Voltar ao login</a>');
     }
