@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <textarea id="home-tx" name="homePhrase"></textarea>
                             </div 
                             <div class="input-group">
-                                <button type="submit" class="button">salvar frase</button>
+                                <button type="submit" class="button">salvar</button>
                                 <button type="button" class="go-back-btn">cancelar e voltar</button>
                             </div>
                         </form>
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <textarea id="about-int" name="aboutIntro"></textarea>
                             </div>
                             <div class="input-group">
-                                <button type="submit" class="button">salvar frase</button>
+                                <button type="submit" class="button">salvar</button>
                                 <button type="button" class="go-back-btn">cancelar e voltar</button>
                             </div>
                             </form>
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <textarea id="about-tx" name="aboutText"></textarea>
                             </div>
                             <div class="input-group">
-                                <button type="submit" class="button">salvar frase</button>
+                                <button type="submit" class="button">salvar</button>
                                 <button type="button" class="go-back-btn">cancelar e voltar</button>
                             </div>
                             </form>
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <textarea id="obj-int" name="objIntro"></textarea>
                             </div>
                             <div class="input-group">
-                                <button type="submit" class="button">salvar frase</button>
+                                <button type="submit" class="button">salvar</button>
                                 <button type="button" class="go-back-btn">cancelar e voltar</button>
                             </div>
                             </form>
@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <textarea id="obj-ph" name="objText"></textarea>
                             </div>
                             <div class="input-group">
-                                <button type="submit" class="button">salvar frase</button>
+                                <button type="submit" class="button">salvar</button>
                                 <button type="button" class="go-back-btn">cancelar e voltar</button>
                             </div>
                             </form>
@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <textarea id="goal-int" name="goalIntro"></textarea>
                             </div>
                             <div class="input-group">
-                                <button type="submit" class="button">salvar frase</button>
+                                <button type="submit" class="button">salvar</button>
                                 <button type="button" class="go-back-btn">cancelar e voltar</button>
                             </div>
                         </form>
@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <textarea id="goal-ph" name="goalText"></textarea>
                             </div>
                             <div class="input-group">
-                                <button type="submit" class="button">salvar frase</button>
+                                <button type="submit" class="button">salvar</button>
                                 <button type="button" class="go-back-btn">cancelar e voltar</button>
                             </div>
                             </form>
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <textarea id="comp-ph" name="comproIntro"></textarea>
                             </div>
                             <div class="input-group">
-                                <button type="submit" class="button">salvar frase</button>
+                                <button type="submit" class="button">salvar</button>
                                 <button type="button" class="go-back-btn">cancelar e voltar</button>
                             </div>
                         </form>
@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <textarea id="comp-tx" name="comproText"></textarea>
                             </div>
                             <div class="input-group">
-                                <button type="submit" class="button">salvar frase</button>
+                                <button type="submit" class="button">salvar</button>
                                 <button type="button" class="go-back-btn">cancelar e voltar</button>
                             </div>    
                     </form>
@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <textarea id="skill-tx" name="skillText"></textarea>
                             </div>    
                             <div class="input-group">
-                                <button type="submit" class="button">salvar frase</button>
+                                <button type="submit" class="button">salvar</button>
                                 <button type="button" class="go-back-btn">cancelar e voltar</button>
                             </div>        
                         </form>
@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <textarea id="service-tx" name="serviceText"></textarea>
                             </div>
                             <div class="input-group">
-                                <button type="submit" class="button">salvar frase</button>
+                                <button type="submit" class="button">salvar</button>
                                 <button type="button" class="go-back-btn">cancelar e voltar</button>
                             </div>        
                         </form>
@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <textarea id="serv-tx" name="serviceText"></textarea>
                             </div>
                             <div class="input-group">
-                                <button type="submit" class="button">salvar frase</button>
+                                <button type="submit" class="button">salvar</button>
                                 <button type="button" class="go-back-btn">cancelar e voltar</button>
                             </div>        
                         </form>
@@ -328,7 +328,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <textarea id="proj-tx" name="projectsText"></textarea>
                             </div>
                             <div class="input-group">
-                                <button type="submit" class="button">salvar frase</button>
+                                <button type="submit" class="button">salvar</button>
                                 <button type="button" class="go-back-btn">cancelar e voltar</button>
                             </div>        
                         </form>
@@ -360,11 +360,11 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <input type="text" id="proj-ct" name="projectType"></input>
                             </div>
                             <div class="input-group">
-                                <label for="proj-scr">screenshots do projeto</label>
-                                <input type="file" id="proj-scr" name="projectImgs"></input>
+                                <label for="proj-lk">link do projeto</label>
+                                <input type="text" id="proj-lk" name="projectlink"></input>
                             </div>
                             <div class="input-group">
-                                <button type="submit" class="button">salvar frase</button>
+                                <button type="submit" class="button">salvar</button>
                                 <button type="button" class="go-back-btn">cancelar e voltar</button>
                             <div>        
                         </form>
@@ -388,7 +388,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <textarea id="test-tx" name="testText"></textarea>
                             </div>
                             <div class="input-group">    
-                                <button type="submit" class="button">salvar frase</button>
+                                <button type="submit" class="button">salvar</button>
                                 <button type="button" class="go-back-btn">cancelar e voltar</button>
                             </div>        
                         </form>

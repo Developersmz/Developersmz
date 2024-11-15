@@ -67,19 +67,19 @@ document.addEventListener("DOMContentLoaded", () => {
     closeSetts.addEventListener("click", () => {
         settsOpts.style.display = "none"
     })
-
-    // Settings change active background
-    const bg1 = document.querySelector(".bg-1")
-    const bg2 = document.querySelector(".bg-2")
-    const bg3 = document.querySelector(".bg-3")
-    const root = document.querySelector(":root")
     
     // Show more about content
-    const moreAboutBtn = document.querySelectorAll(".about-button")
+    const moreAboutBtn = document.querySelectorAll(".about-button a")
     moreAboutBtn.forEach((button) => {
         button.addEventListener("click", (event) => {
             const parentDiv = event.target.closest(".about-item")
             parentDiv.classList.toggle('showed')
+
+            if (parentDiv.classList.contains('showed')) {
+				button.textContent = 'Ver menos';
+			} else {
+				button.textContent = 'Ver mais';
+			}
 
         })
     })
@@ -94,25 +94,5 @@ document.addEventListener("DOMContentLoaded", () => {
     closeSec.onclick = () => {
         document.querySelector(".new-test").style.display="none"
     }
-
-    // Project shower
-    // open shower
-    // const projectItem = document.querySelectorAll(".project")
-    // projectItem.forEach((item) => {
-    //     item.addEventListener("click", () => {
-    //         document.querySelector(".project-shower").style.display="grid"
-    //     })
-    // })
-    // close shower
-    // const closeShower = document.querySelector("#close-shower")
-    // closeShower.onclick = () => {
-    //     document.querySelector(".project-shower").style.display="none"
-    // }
-
-    // Previous Image
-    // const previousImg = document.querySelector("#left-img")
-
-    // Next Image
-    // const nextImg = document.querySelector("#right-img")
 
 })

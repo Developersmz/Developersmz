@@ -9,8 +9,8 @@ router.get('/', async (req, res) => {
     let db_values = await Value.findAll()
     let db_skills = await Skill.findAll()
     let db_services = await Service.findAll()
-    let db_projects = await Project.findAll()
-    let db_testimony = await Testimony.findAll()
+    let db_projects = await Project.findAll({ order: [['id', 'DESC']] })
+    let db_testimony = await Testimony.findAll({ order: [['id', 'DESC']] })
 
     let home = db_home.map(items => items.toJSON())
     let about = db_about.map(items => items.toJSON())
@@ -22,6 +22,8 @@ router.get('/', async (req, res) => {
 
     const userId = req.session.passport ? req.session.passport.user : null;
     let user = null
+
+    let currentYear = new Date().getFullYear()
 
     if (userId) {
         const foundUser = await User.findByPk(userId)
@@ -36,7 +38,8 @@ router.get('/', async (req, res) => {
         db_services: services,
         db_projects: projects,
         db_testimony: testimony,
-        user
+        user,
+        currentYear
     })
 })
 
