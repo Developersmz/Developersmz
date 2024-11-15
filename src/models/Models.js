@@ -162,12 +162,12 @@ User.beforeCreate(async (user) => {
     user.password = hash
 })
 
-db.sequelize.sync({ alter: true })
-    .then(() => {
-        console.log('Banco de dados sincronizado e modelo atualizado.');
-    })
-    .catch((err) => {
-        console.log('Erro ao sincronizar o banco de dados:', err);
-});
+// db.sequelize.sync({ alter: true })
+//     .then(() => {
+//         console.log('Banco de dados sincronizado e modelo atualizado.');
+//     })
+//     .catch((err) => {
+//         console.log('Erro ao sincronizar o banco de dados:', err);
+// });
 
 module.exports = { User, Home, About, Value, Skill, Service, Project, Testimony }
