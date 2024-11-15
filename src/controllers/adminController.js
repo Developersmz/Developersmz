@@ -171,12 +171,12 @@ const updateAction  = (req, res) => {
         }).then(() => res.render('output', {success: 'Tabela atualizada com sucesso!'})).catch(() => res.render('output', {error: 'Ocorreu um erro ao atualizar a tabela!'}))
     }  else if (req.body.hidden == 'project'){
         // Project
-        const { projectTitle, projectSkills, projectType, projectImgs } = req.body
+        const { projectTitle, projectSkills, projectType, projectlink } = req.body
         const data = {
             title: projectTitle,
             skillused: projectSkills,
             type: projectType,
-            screenshots: projectImgs
+            link: projectlink
         }
         Project.create(data).then(() => res.render('output', {success: 'Tabela atualizada com sucesso!'})).catch(() => res.render('output', {error: 'Ocorreu um erro ao atualizar a tabela!'}))
     } else if (req.body.hidden == 'testText'){
