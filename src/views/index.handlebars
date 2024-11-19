@@ -432,7 +432,7 @@
                         </div>
                         {{else}}
                           <div class="input-group">
-                            <a href="/auth/login" class="btn btn-2">Login</a>
+                            <a href="/auth/login" class="btn btn-2">Enviar</a>
                           </div>
                       {{/if}}
                   </form>
@@ -486,7 +486,7 @@
             <div class="footer-col">
                 <h4>links sociais</h4>
                 <ul>
-                    <li><a href="https://github.com/developersmz" target="_blank">git hub</a></li>
+                    <li><a href="https://github.com/developersmz" target="_blank">github</a></li>
                     <li><a href="https://twitter.com/developersmz" target="_blank">twitter</a></li>
                     <li><a href="https://www.instagram.com/developersmz/" target="_blank">instagram</a></li>
                     <li><a href="https://www.facebook.com/profile.php?id=61556706071013" target="_blank">facebook</a></li>
@@ -498,13 +498,13 @@
                 <h4>developersmz</h4>
                 <ul>
                   {{#if user}}
-                    <li><a href="/auth/logout">logout</a></li>
+                    <li><a href="/auth/logout">terminar sessão</a></li>
                     {{#if user.isAdmin}}
-                      <li><a href="/admin/developersmz/dashboard">dashboard</a></li>
-                      <li><a href="/admin/developersmz/dashboard/action">action</a></li>
+                      <li><a href="/admin/developersmz/dashboard">Área administrativa</a></li>
+                      <li><a href="/admin/developersmz/dashboard/action">Action</a></li>
                     {{/if}}
                     {{else}}
-                      <li><a href="/auth/register">Inscreva-se</a></li>
+                      <li><a href="/auth/register">Criar conta</a></li>
                       <li><a href="/auth/login">Entrar</a></li>
                   {{/if}}
                 </ul>
