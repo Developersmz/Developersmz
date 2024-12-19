@@ -6,7 +6,7 @@ const { updateAction, updateAdmin } = require('../controllers/adminController')
 const { User } = require('../models/Models')
 
 router.get('/developersmz/dashboard/action', checkLogin, checkAdmin, (req, res) => {
-    res.render('actions')
+    res.render('actions', { title: "DevelopersMz | Dashboard Actions" })
 })
 
 router.post('/dashboard/action', updateAction)

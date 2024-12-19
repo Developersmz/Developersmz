@@ -14,19 +14,19 @@ const { register, login, logout } = require('../controllers/authController')
 // Register User
 
 router.get('/register', (req, res) => {
-    res.render('user')
+    res.render('user', { title: "DevelopersMz | Signup" })
 })
 
 router.post('/register', register)
 
 router.get('/login', (req, res) => {
-    res.render('user')
+    res.render('user', { title: "DevelopersMz | Signin" })
 })
 
 router.post('/login', login)
 
 router.get('/forgot', (req, res) => {
-    res.render('forgot')
+    res.render('forgot', { title: "DevelopersMz | Forgot" })
 })
 
 router.post('/forgot', async (req, res) => {
@@ -82,7 +82,6 @@ router.post('/forgot', async (req, res) => {
 })
 
 router.get('/reset/:token', async (req, res) => {
-    console.log(req.params.token)
     try {
         const user = await User.findOne({
           where: {

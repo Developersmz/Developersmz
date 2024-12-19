@@ -39,7 +39,7 @@ router.get('/', async (req, res) => {
         db_projects: projects,
         db_testimony: testimony,
         user,
-        currentYear
+        currentYear,
     })
 })
 
@@ -88,7 +88,7 @@ router.post('/developersmz/send_email', async (req, res) => {
 })
 
 router.get('/developersmz/terms_conditions', (req, res) => {
-    res.render('conditions')
+    res.render('conditions', { title: "DevelopersMz | Terms & Conditions" })
 })
 
 module.exports = router
