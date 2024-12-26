@@ -1,26 +1,43 @@
+const { Op } = require('sequelize')
 const { User } = require('../models/Models')
 const { passport } = require('../../config/passport')
 
-const register = (req, res, next) => {
+const register = async (req, res, next) => {
     const { username, email, password } = req.body
 
-    User.create({
-        username: username,
-        email: email,
-        password: password,
-        isAdmin: false,
-     })
-    .then((user) => {
-        req.login(user, (e) => {
-            if (e) {
+    try {
+        const checkUser = await User.findOne({
+            where: {
+                [Op.or]: [{ email }, {username}]
+            }
+        })
+
+        if (checkUser) {
+            if (checkUser.email === email){
+                return res.render('user', { errorMessage: "E-mail já registrado. Use outro ou faça login." })
+            }
+            if (checkUser.username === username) {
+                return res.render('user', { errorMessage: "Nome de usuário em uso. Tente outro." });
+            }
+        }
+
+        const newUser = await User.create({
+            username: username,
+            email: email,
+            password: password
+        })
+
+        req.logIn(newUser, (err) => {
+            if (err) {
                 return next(e)
             }
-            return res.redirect("/")
+            return res.redirect('/')
         })
-    })
-    .catch((error) => {
-        res.redirect('/auth/register')
-    })
+
+    } catch (error) {
+        console.error(error);
+        res.render('user',  { errorMessage: "Erro ao criar conta. Tente novamente." })
+    }
 }
 
 const login = async (req, res, next) => {
